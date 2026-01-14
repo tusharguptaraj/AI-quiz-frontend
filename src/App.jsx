@@ -10,7 +10,7 @@ import Profile from "./pages/Profile";
 import Quizzes from "./pages/Quizzes";
 import Analytics from "./pages/Analytics";
 import CreateQuiz from "./pages/CreateQuiz";
-import Loader from "./components/loader";
+
 
 // 🔒 Wrapper component for protecting routes
 function ProtectedRoute({ children }) {
