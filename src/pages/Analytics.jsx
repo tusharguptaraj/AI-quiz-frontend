@@ -20,7 +20,7 @@ export default function Analytics() {
     if (!user) return;
     const fetchQuizzes = async () => {
       try {
-        const res = await axios.get(`http://intelliq-api.onrender.com/api/quizzes/${user.email}`);
+        const res = await axios.get(`https://intelliq-api.onrender.com/api/quizzes/${user.email}`);
         setQuizzes(res.data || []);
       } catch (err) {
         console.error("Failed to fetch quizzes:", err);

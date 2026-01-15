@@ -33,7 +33,7 @@ export default function Profile() {
 
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch(`http://intelliq-api.onrender.com/api/user/${user.email}`);
+        const response = await fetch(`https://intelliq-api.onrender.com/api/user/${user.email}`);
         if (!response.ok) throw new Error("Failed to fetch user details");
         const data = await response.json();
         setUserDetails(data);
@@ -53,7 +53,7 @@ export default function Profile() {
 
     const fetchQuizStats = async () => {
       try {
-        const res = await fetch(`http://intelliq-api.onrender.com/api/quizzes/${user.email}`);
+        const res = await fetch(`https://intelliq-api.onrender.com/api/quizzes/${user.email}`);
         if (!res.ok) throw new Error("Failed to fetch quizzes");
         const quizzes = await res.json();
 
@@ -121,7 +121,7 @@ export default function Profile() {
       await updateProfile(user, { displayName: name });
       const emailEncoded = encodeURIComponent(user.email);
 
-      const res = await fetch(`http://intelliq-api.onrender.com/api/user/${emailEncoded}`, {
+      const res = await fetch(`https://intelliq-api.onrender.com/api/user/${emailEncoded}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, role }),
