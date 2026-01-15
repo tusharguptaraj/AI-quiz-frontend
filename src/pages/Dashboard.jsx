@@ -21,7 +21,7 @@ export default function Dashboard() {
     if (!user?.email) return;
     const fetchUserDetails = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/user/${user.email}`);
+        const res = await fetch(`http://intelliq-api.onrender.com/api/user/${user.email}`);
         if (!res.ok) throw new Error("Failed to fetch user details");
         const data = await res.json();
         setUserDetails(data);
@@ -37,7 +37,7 @@ export default function Dashboard() {
     if (!user?.email) return;
     const fetchQuizzes = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/quizzes/${user.email}`);
+        const res = await fetch(`http://intelliq-api.onrender.com/api/quizzes/${user.email}`);
         const data = await res.json();
         setQuizzes(data || []);
       } catch (err) {

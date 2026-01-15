@@ -47,7 +47,7 @@ export default function CreateQuiz() {
       if (textInput.trim()) formData.append("topic", textInput);
       if (file) formData.append("file", file);
 
-      const res = await fetch("http://localhost:5000/api/quiz/generate", {
+      const res = await fetch("http://intelliq-api.onrender.com/api/quiz/generate", {
         method: "POST",
         body: formData,
       });
@@ -113,7 +113,7 @@ export default function CreateQuiz() {
   const handleSubmitQuiz = async () => {
     setSubmitted(true);
     try {
-      await fetch("http://localhost:5000/api/quiz/submit", {
+      await fetch("http://intelliq-api.onrender.com/api/quiz/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -130,7 +130,7 @@ export default function CreateQuiz() {
 
   const handleFeedbackSubmit = async () => {
     try {
-      await fetch("http://localhost:5000/api/feedback", {
+      await fetch("http://intelliq-api.onrender.com/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: user?.email, feedback }),

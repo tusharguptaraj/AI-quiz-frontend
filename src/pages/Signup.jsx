@@ -32,7 +32,7 @@ export default function Signup() {
     console.log("User signed up with Firebase:", userCredential.user);
 
     // 3️⃣ Send data to backend (MongoDB)
-    const backendResponse = await fetch("http://localhost:5000/api/user", { // <-- updated URL
+    const backendResponse = await fetch("http://intelliq-api.onrender.com/api/user", { // <-- updated URL
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
